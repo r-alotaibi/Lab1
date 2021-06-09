@@ -6,7 +6,13 @@ namespace Lab1Demo
     {
         static void Main(string[] args)
         {
+            //for exercise 1,3
             Tocheck();
+            
+            //****************************************************//
+            
+            //for exercise 4
+            ToChekBalance();
         }
 
         //To check for sum, prod, sub, and div, include the Switch case to get the arithmetic choice from the user.
@@ -61,6 +67,59 @@ namespace Lab1Demo
             }
 
 
+        }
+        
+        //Wap to accept user's choice to check balance, withdraw or deposit / change pin- if the user selects check balance,
+        //display the default cash value 1000Rs; for withdraw, deduct the balance and show the total balance; for deposit,
+        //add the balance and show the total amount. Include the pin of the user to be validated.
+        public static void ToChekBalance()
+        {
+            int cash = 1000;
+
+            Console.WriteLine("Enter 1 if you want to check the balance,");
+            Console.WriteLine();
+            Console.WriteLine("Enter 2 if you want to withdraw,");
+            Console.WriteLine();
+            Console.WriteLine("Enter 3 if you want to deposit/change pin..");
+            Console.WriteLine();
+
+            string ch = Console.ReadLine();
+
+            switch (ch)
+            {
+                case "1":
+                    Console.WriteLine($"YOU HAVE {cash} SAR.");
+                    break;
+
+                case "2":
+                    Console.WriteLine("what much the deduct balance?");
+                    int d = Convert.ToInt32(Console.ReadLine());
+                    if (cash > d)
+                    {
+                        cash = cash - d;
+                    }
+                    else
+                    {
+                        Console.WriteLine("This amount is greater than the basic amount");
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine($"YOU HAVE NOW {cash} SAR.");
+                    break;
+
+                case "3":
+                    Console.WriteLine("what much the money you want to add? ");
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    cash = cash + b;
+
+                    Console.WriteLine();
+                    Console.WriteLine($"YOU HAVE NOW {cash} SAR.");
+                    break;
+                
+                default:
+                    Console.WriteLine($"YOU HAVE {cash} SR.");
+                    break;
+            }
         }
     }
 }
