@@ -9,7 +9,7 @@ namespace Lab1Demo
             Tocheck();
         }
 
-        //To check for sum, prod, sub, div nclude the Switch case to get the arithmetic choice from the user.
+        //To check for sum, prod, sub, and div, include the Switch case to get the arithmetic choice from the user.
         public static void Tocheck()
         {
             int num1, num2;
